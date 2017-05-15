@@ -1,0 +1,17 @@
+<h1 class="header"> KUJU'S TASK MANAGER </h1>
+<p id="notice"><%= notice %></p>
+<h2 class="task_list_title"><%= @task_list.title %> </h2>
+<p class="task_list_sub_title"><%= @task_list.description %></p>
+
+<div id="task_list_wrapper">
+	<%= render @task_list.task_items %>
+	<div id="form">
+		<%= render "task_items/form" %>
+	</div>
+</div>
+
+<div class="links">
+	<%= link_to 'Edit', edit_task_list_path(@task_list) %>|
+	<%= link_to 'Delete', task_list_path(@task_list), method: :delete, data: { confirm: " Are You Sure ? " } %>|
+	<%= link_to 'Back', task_lists_path %>
+</div>
